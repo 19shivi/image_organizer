@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:image_organizer/pages/image_class.dart';
+import 'package:image_organizer/pages/static.dart';
 // ignore_for_file: prefer_const_constructors
 
 class MainPage extends StatefulWidget {
@@ -32,7 +33,7 @@ class _MainPageState extends State<MainPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Imageorganizer(),
+                            builder: (context) => StaticImage(),
                           ),
                         );
                       },

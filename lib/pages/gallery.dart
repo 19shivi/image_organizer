@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:image_organizer/pages/asset_class.dart';
 import 'package:photo_manager/photo_manager.dart';
-// ignore_for_file: prefer_const_constructors
-
+import 'package:tflite/tflite.dart';
 class Gallery extends StatefulWidget {
   const Gallery({Key? key}) : super(key: key);
 
@@ -34,6 +33,15 @@ class _GalleryState extends State<Gallery> {
     ),
     );
   }
+  Future loadModel() async {
+
+    Tflite.close();
+    await Tflite.loadModel(
+        model: "assets/ssd_mobilenet.tflite",
+        labels: "assets/ssd_mobilenet.txt");
+  }
+
+
   _fetchAssets() async {
     // Set onlyAll to true, to fetch only the 'Recent' album
     // which contains all the photos/videos in the storage
@@ -48,3 +56,4 @@ class _GalleryState extends State<Gallery> {
     setState(() => assets = recentAssets);
   }
 }
+
