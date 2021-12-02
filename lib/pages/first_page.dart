@@ -20,8 +20,13 @@ class _MainPageState extends State<MainPage> {
             child: Text("ABC")
         ),
       ),
-      body: Stack(
+      body: Column(
         children: [
+          Image.asset(
+            'assets/img.png',
+            height: 170,
+            width: 170,
+          ),
         GridView.count(
           physics: ScrollPhysics(),
             crossAxisCount: 2,
