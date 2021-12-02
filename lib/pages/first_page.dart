@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_organizer/pages/Flower.dart';
 import 'package:image_organizer/pages/image_class.dart';
 import 'package:image_organizer/pages/static.dart';
 // ignore_for_file: prefer_const_constructors
@@ -33,7 +34,7 @@ class _MainPageState extends State<MainPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => StaticImage(),
+                            builder: (context) => Imageorganizer(),
                           ),
                         );
                       },
@@ -74,11 +75,18 @@ class _MainPageState extends State<MainPage> {
                 padding: const EdgeInsets.all(10),
                 child: TextButton(
                   onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FlowerApp(),
+                      ),
+                    );
                   },
                   child: Align(
                     alignment: Alignment.topLeft,
                     child: Text("Flower Detection",
-                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.black)
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.black,)
+
                     ),
                   ),
 
