@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:image_organizer/main.dart';
 import 'package:image_organizer/pages/Flower.dart';
 import 'package:image_organizer/pages/image_class.dart';
 import 'package:image_organizer/pages/static.dart';
+
+import '../face.dart';
 // ignore_for_file: prefer_const_constructors
 
 class MainPage extends StatefulWidget {
@@ -20,13 +23,8 @@ class _MainPageState extends State<MainPage> {
             child: Text("ABC")
         ),
       ),
-      body: Column(
+      body: Stack(
         children: [
-          Image.asset(
-            'assets/img.png',
-            height: 170,
-            width: 170,
-          ),
         GridView.count(
           physics: ScrollPhysics(),
             crossAxisCount: 2,
@@ -39,7 +37,7 @@ class _MainPageState extends State<MainPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => Imageorganizer(),
+                            builder: (context) => StaticImage(),
                           ),
                         );
                       },
@@ -51,6 +49,31 @@ class _MainPageState extends State<MainPage> {
                         ),
 
                     ),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.redAccent
+                ),
+              ),
+              Container(
+                margin: const EdgeInsets.all(8),
+                padding: const EdgeInsets.all(10),
+                child: TextButton(
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => MyHomePage(),
+                      ),
+                    );
+                  },
+                  child: Align(
+                    alignment: Alignment.topLeft,
+                    child: Text("Face Recognition",
+                        style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25,color: Colors.black)
+                    ),
+                  ),
+
+                ),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15),
                     color: Colors.redAccent

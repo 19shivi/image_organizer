@@ -11,22 +11,14 @@ import 'package:tflite_flutter/tflite_flutter.dart' as tfl;
 import 'package:quiver/collection.dart';
 import 'package:flutter/services.dart';
 
-void main() {
-  runApp(MaterialApp(
-    themeMode: ThemeMode.light,
-    theme: ThemeData(brightness: Brightness.light),
-    home: _MyHomePage(),
-    title: "Face Recognition",
-    debugShowCheckedModeBanner: false,
-  ));
-}
 
-class _MyHomePage extends StatefulWidget {
+
+class MyHomePage extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<_MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   late File jsonFile;
   dynamic _scanResults;
   late CameraController _camera;
